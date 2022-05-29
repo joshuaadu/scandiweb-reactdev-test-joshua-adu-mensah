@@ -6,8 +6,9 @@
 }
 
 body {
-  margin: 0;
   padding: 0;
   font-family: "Raleway", sans-serif;
   color: colors.$primary-body-text-color;
+  max-width: 90rem;
+  margin: 0 auto;
 }
