@@ -1,0 +1,21 @@
+.header {
+  width: 100%;
+  height: 80px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  align-items: center;
+
+  //   nav {
+  //     justify-self: start;
+  //     height: 100%;
+  //   }
+
+  .brand-icon {
+    justify-self: center;
+  }
+
+  .action-icons {
+    justify-self: end;
+  }
+}

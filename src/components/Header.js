@@ -1,11 +1,20 @@
 import React, { Component } from "react";
 import NavBar from "./navigation/NavBar";
+import { ReactComponent as BrandLogo } from "../assets/brand-icon.svg";
+import { ReactComponent as CartIcon } from "../assets/cart-icon.svg";
+import styles from "../styles/Header.module.scss";
 
 class Header extends Component {
   render() {
     return (
-      <header>
+      <header className={styles.header}>
         <NavBar />
+        <div className={styles["brand-icon"]}>
+          <BrandLogo />
+        </div>
+        <div className={styles["action-icons"]}>
+          <CartIcon />
+        </div>
       </header>
     );
   }

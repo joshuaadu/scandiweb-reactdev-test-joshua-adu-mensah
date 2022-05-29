@@ -1,0 +1,27 @@
+.navBar {
+  justify-self: start;
+  height: 100%;
+
+  ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    height: 100%;
+    margin: 0;
+
+    li {
+      height: 100%;
+      margin-right: 2rem;
+      text-transform: uppercase;
+
+      a {
+        text-decoration: none;
+        color: inherit;
+        display: flex;
+        align-items: center;
+        height: 100%;
+      }
+    }
+  }
+}
