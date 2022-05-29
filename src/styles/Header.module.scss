@@ -1,16 +1,12 @@
 .header {
   width: 100%;
   height: 80px;
+  font-weight: 400;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-content: center;
   align-items: center;
   padding: 0 4rem;
-
-  //   nav {
-  //     justify-self: start;
-  //     height: 100%;
-  //   }
 
   .brand-icon {
     justify-self: center;

@@ -1,3 +1,4 @@
+@use "../styles/colors" as colors;
 .navBar {
   justify-self: start;
   height: 100%;
@@ -12,8 +13,8 @@
 
     li {
       height: 100%;
-      margin-right: 2rem;
       text-transform: uppercase;
+      line-height: 120%;
 
       a {
         text-decoration: none;
@@ -21,6 +22,13 @@
         display: flex;
         align-items: center;
         height: 100%;
+        padding: 0 1rem;
+
+        &.link-active {
+          color: colors.$primary-color;
+          border-bottom: 2px solid colors.$primary-color;
+          font-weight: 600;
+        }
       }
     }
   }

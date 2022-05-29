@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styles from "../../styles/NavBar.module.scss";
 
 class NavBar extends Component {
@@ -8,13 +8,34 @@ class NavBar extends Component {
       <nav className={styles.navBar}>
         <ul>
           <li>
-            <Link to="women">women</Link>
+            <NavLink
+              to="women"
+              className={({ isActive }) =>
+                isActive ? styles["link-active"] : undefined
+              }
+            >
+              women
+            </NavLink>
           </li>
           <li>
-            <Link to="men">men</Link>
+            <NavLink
+              to="men"
+              className={({ isActive }) =>
+                isActive ? styles["link-active"] : undefined
+              }
+            >
+              men
+            </NavLink>
           </li>
           <li>
-            <Link to="kids">kids</Link>
+            <NavLink
+              to="kids"
+              className={({ isActive }) =>
+                isActive ? styles["link-active"] : undefined
+              }
+            >
+              kids
+            </NavLink>
           </li>
         </ul>
       </nav>
