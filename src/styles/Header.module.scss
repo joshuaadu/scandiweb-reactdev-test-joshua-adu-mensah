@@ -14,5 +14,8 @@
 
   .action-icons {
     justify-self: end;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
   }
 }
