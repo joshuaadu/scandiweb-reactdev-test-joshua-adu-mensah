@@ -14,12 +14,20 @@ class CurrencyOption extends Component {
     super(props);
     this.state = { currency: currencyList.get("USD") };
   }
+
+  select(currency) {
+    this.setState({ currency: currencyList.get(currency) });
+  }
+
   render() {
     return (
       <div className={styles["currency-option"]}>
         <span>{this.state.currency}</span>
         <SelectIcon />
-        <CurrencyDropdownList list={Array.from(currencyList)} />
+        <CurrencyDropdownList
+          list={Array.from(currencyList)}
+          select={this.select.bind(this)}
+        />
       </div>
     );
   }

@@ -6,7 +6,10 @@ class CurrencyDropdownList extends Component {
     return (
       <div className={styles["dropdown-list"]}>
         {this.props.list.map(([currency, symbol]) => (
-          <span key={currency}>{`${symbol} ${currency}`}</span>
+          <span
+            onClick={() => this.props.select(currency)}
+            key={currency}
+          >{`${symbol} ${currency}`}</span>
         ))}
       </div>
     );
