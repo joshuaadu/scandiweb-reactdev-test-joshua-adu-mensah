@@ -12,22 +12,30 @@ const currencyList = new Map([
 class CurrencyOption extends Component {
   constructor(props) {
     super(props);
-    this.state = { currency: currencyList.get("USD") };
+    this.state = { currency: currencyList.get("USD"), showList: false };
   }
 
   select(currency) {
     this.setState({ currency: currencyList.get(currency) });
   }
 
+  showList() {
+    this.setState((prevState) => {
+      return { showList: !prevState.showList };
+    });
+  }
+
   render() {
     return (
       <div className={styles["currency-option"]}>
         <span>{this.state.currency}</span>
-        <SelectIcon />
-        <CurrencyDropdownList
-          list={Array.from(currencyList)}
-          select={this.select.bind(this)}
-        />
+        <SelectIcon onClick={this.showList.bind(this)} />
+        {this.state.showList && (
+          <CurrencyDropdownList
+            list={Array.from(currencyList)}
+            select={this.select.bind(this)}
+          />
+        )}
       </div>
     );
   }
