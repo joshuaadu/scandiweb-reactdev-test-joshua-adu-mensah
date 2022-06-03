@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
-import ProductCard from "./components/ProductCard";
+import Products from "./pages/Products";
 
 class App extends Component {
   render() {
@@ -10,20 +10,7 @@ class App extends Component {
         <Header />
         <Routes>
           <Route index element={<h2>women</h2>} />
-          <Route
-            path="women"
-            element={
-              <>
-                <h2>women</h2>
-                <ProductCard
-                  src="https://source.unsplash.com/random/?dress"
-                  title="dress"
-                  price="200"
-                  currency="$"
-                />
-              </>
-            }
-          />
+          <Route path="women" element={<Products />} />
           <Route path="men" element={<h2>men</h2>} />
           <Route path="kids" element={<h2>kids</h2>} />
         </Routes>
