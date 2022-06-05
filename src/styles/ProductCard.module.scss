@@ -11,14 +11,28 @@
   background: colors.$background-color-white;
   font-size: fontStyles.$primary-font-size;
   width: 25rem;
+  position: relative;
 
   p {
     margin: 0;
     width: 100%;
   }
 
+  .cart-icon {
+    position: absolute;
+    left: 67.49%;
+    right: 10.61%;
+    top: 70.91%;
+    bottom: 4.15%;
+    visibility: hidden;
+  }
+
   &:where(:active, :hover) {
     box-shadow: 0px 4px 35px 0px rgba(168, 172, 176, 0.19);
+
+    .cart-icon {
+      visibility: visible;
+    }
   }
 
   .title {

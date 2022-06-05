@@ -1,5 +1,6 @@
 import { Component } from "react";
 import styles from "../styles/ProductCard.module.scss";
+import { ReactComponent as CartIcon } from "../assets/cart-icon-green.svg";
 
 class ProductCard extends Component {
   render() {
@@ -10,6 +11,7 @@ class ProductCard extends Component {
         <p className={styles.price}>{`${this.props.currency}${Number(
           this.props.price
         ).toFixed(2)}`}</p>
+        <CartIcon className={styles["cart-icon"]} />
       </div>
     );
   }
