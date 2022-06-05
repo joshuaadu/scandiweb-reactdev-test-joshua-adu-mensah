@@ -1,13 +1,14 @@
 import { Component } from "react";
 import ProductCard from "../components/ProductCard";
-import ProductCategoryView from "../layout/ProductCategoryView";
+import ProductList from "../layout/ProductList";
+import styles from "../styles/Products.module.scss";
 
 class Products extends Component {
   render() {
     return (
-      <main>
+      <main className={styles.main}>
         <h2>women</h2>
-        <ProductCategoryView>
+        <ProductList>
           <>
             <ProductCard
               src="https://source.unsplash.com/random/?dress"
@@ -34,7 +35,7 @@ class Products extends Component {
               currency="$"
             />
           </>
-        </ProductCategoryView>
+        </ProductList>
       </main>
     );
   }
