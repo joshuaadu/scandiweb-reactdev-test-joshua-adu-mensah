@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { ReactComponent as SelectIcon } from "../assets/arrow-up.svg";
+import CurrencyContext from "../store/currency-context";
 import styles from "../styles/CurrencyOption.module.scss";
 import CurrencyDropdownList from "./CurrencyDropdrownList";
 
@@ -10,9 +11,14 @@ const currencyList = new Map([
 ]);
 
 class CurrencyOption extends Component {
+  static contextType = CurrencyContext;
   constructor(props) {
     super(props);
-    this.state = { currency: currencyList.get("USD"), showList: false };
+    this.state = {
+      currency: currencyList.get("USD"),
+      showList: false,
+    };
+    console.log(this.context);
   }
 
   select(currency) {
