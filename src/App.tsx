@@ -4,23 +4,24 @@ import Header from "./components/Header";
 import Products from "./pages/Products";
 import CurrencyContext from "./store/currency-context";
 
-class App extends Component<{}, { currency: string }> {
-  constructor(props: any) {
-    super(props);
-    this.state = {
-      currency: "USD",
-    };
-  }
+class App extends Component {
+  state = {
+    currency: "USD",
+    currencySymbol: "$",
+  };
 
-  switchCurrency(newCurrency: string) {
-    this.setState({ currency: newCurrency });
-  }
+  switchCurrency = (currency: string, currencySymbol: string) => {
+    this.setState((prevState) => ({ currency, currencySymbol }));
+  };
   render() {
+    const { currency, currencySymbol } = this.state;
+    const { switchCurrency } = this;
     return (
       <CurrencyContext.Provider
         value={{
-          currency: this.state,
-          switchCurrency: this.switchCurrency.bind(this),
+          currency,
+          currencySymbol,
+          switchCurrency,
         }}
       >
         <div className="App">

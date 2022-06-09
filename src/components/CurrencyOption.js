@@ -12,29 +12,30 @@ const currencyList = new Map([
 
 class CurrencyOption extends Component {
   static contextType = CurrencyContext;
-  constructor(props) {
-    super(props);
-    this.state = {
-      currency: currencyList.get("USD"),
-      showList: false,
-    };
-    console.log(this.context);
-  }
+
+  state = {
+    currencySymbol: currencyList.get(this.context.currency),
+    showList: false,
+  };
 
   select(currency) {
-    this.setState({ currency: currencyList.get(currency) });
+    const symbol = currencyList.get(currency);
+    this.setState({ currencySymbol: symbol });
+    this.context.switchCurrency(currency, symbol);
   }
 
-  showList() {
+  showList = () => {
     this.setState((prevState) => {
       return { showList: !prevState.showList };
     });
-  }
+  };
 
   render() {
+    const { currency } = this.context;
+    console.log("CurrenyOption Component", currency);
     return (
       <div className={styles["currency-option"]}>
-        <span>{this.state.currency}</span>
+        <span>{this.state.currencySymbol}</span>
         <SelectIcon onClick={this.showList.bind(this)} />
         {this.state.showList && (
           <CurrencyDropdownList
