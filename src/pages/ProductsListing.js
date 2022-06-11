@@ -3,7 +3,7 @@ import ProductCard from "../components/ProductCard";
 import ProductList from "../layout/ProductList";
 import styles from "../styles/Products.module.scss";
 
-class Products extends Component {
+class ProductsListing extends Component {
   render() {
     return (
       <main className={styles.main}>
@@ -41,4 +41,4 @@ class Products extends Component {
   }
 }
 
-export default Products;
+export default ProductsListing;
