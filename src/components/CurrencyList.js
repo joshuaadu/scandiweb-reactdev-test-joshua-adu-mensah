@@ -1,7 +1,7 @@
 import { Component } from "react";
-import styles from "../styles/CurrencyDropdrownList.module.scss";
+import styles from "../styles/CurrencyList.module.scss";
 
-class CurrencyDropdownList extends Component {
+class CurrencyList extends Component {
 	selectHandler(currency) {
 		this.props.select(currency);
 		this.props.close();
@@ -20,4 +20,4 @@ class CurrencyDropdownList extends Component {
 	}
 }
 
-export default CurrencyDropdownList;
+export default CurrencyList;

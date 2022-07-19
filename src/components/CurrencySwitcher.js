@@ -1,8 +1,8 @@
 import { Component } from "react";
 import { ReactComponent as SelectIcon } from "../assets/arrow-up.svg";
 import CurrencyContext from "../store/currency-context";
-import styles from "../styles/CurrencyOption.module.scss";
-import CurrencyDropdownList from "./CurrencyDropdrownList";
+import styles from "../styles/CurrencySwitcher.module.scss";
+import CurrencyList from "./CurrencyList";
 
 const currencyList = new Map([
 	["USD", "$"],
@@ -10,7 +10,7 @@ const currencyList = new Map([
 	["JPY", "¥"],
 ]);
 
-class CurrencyOption extends Component {
+class CurrencySwitcher extends Component {
 	static contextType = CurrencyContext;
 
 	state = {
@@ -40,7 +40,7 @@ class CurrencyOption extends Component {
 					<SelectIcon size="large" />
 				</span>
 				{this.state.showList && (
-					<CurrencyDropdownList
+					<CurrencyList
 						list={Array.from(currencyList)}
 						select={this.select.bind(this)}
 						close={this.showListHandler.bind(this)}
@@ -51,4 +51,4 @@ class CurrencyOption extends Component {
 	}
 }
 
-export default CurrencyOption;
+export default CurrencySwitcher;
