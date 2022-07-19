@@ -3,7 +3,7 @@ import NavBar from "./navigation/NavBar";
 import { ReactComponent as BrandLogo } from "../assets/brand-icon.svg";
 import { ReactComponent as CartIcon } from "../assets/cart-icon.svg";
 import styles from "../styles/Header.module.scss";
-import CurrencyOption from "./CurrencySwitcher";
+import CurrencySwitcher from "./CurrencySwitcher";
 
 class Header extends Component {
 	render() {
@@ -14,7 +14,7 @@ class Header extends Component {
 					<BrandLogo />
 				</div>
 				<div className={styles["action-icons"]}>
-					<CurrencyOption />
+					<CurrencySwitcher />
 					<CartIcon />
 				</div>
 			</header>
