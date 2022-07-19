@@ -36,7 +36,9 @@ class CurrencyOption extends Component {
 		return (
 			<div className={styles["currency-option"]}>
 				<span>{this.state.currencySymbol}</span>
-				<SelectIcon onClick={this.showListHandler.bind(this)} />
+				<span className={styles.icon} onClick={this.showListHandler.bind(this)}>
+					<SelectIcon size="large" />
+				</span>
 				{this.state.showList && (
 					<CurrencyDropdownList
 						list={Array.from(currencyList)}

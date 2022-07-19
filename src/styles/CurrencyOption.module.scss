@@ -1,9 +1,17 @@
 .currency-option {
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-  font-weight: 500;
-  font-size: 1.125rem;
-  line-height: 160%;
-  position: relative;
+	display: flex;
+	gap: 0.5rem;
+	align-items: center;
+	font-weight: 500;
+	font-size: 1.125rem;
+	line-height: 160%;
+	position: relative;
+
+	.icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 1rem;
+		height: 1rem;
+	}
 }
