@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
-import Header from "./components/Header";
+// import Header from "./components/Header";
+import Layout from "./layout/Layout";
 import ProductsListing from "./pages/ProductsListing";
 import CurrencyContext from "./store/currency-context";
 
@@ -25,12 +26,13 @@ class App extends Component {
 				}}
 			>
 				<div className="App">
-					<Header />
 					<Routes>
-						<Route path="/" element={<Navigate to="women" replace={true} />} />
-						<Route path="women" element={<ProductsListing />} />
-						<Route path="men" element={<h2>men</h2>} />
-						<Route path="kids" element={<h2>kids</h2>} />
+						<Route path="/" element={<Layout />}>
+							<Route index element={<ProductsListing />} />
+							<Route path="women" element={<ProductsListing />} />
+							<Route path="men" element={<h2>men</h2>} />
+							<Route path="kids" element={<h2>kids</h2>} />
+						</Route>
 					</Routes>
 				</div>
 			</CurrencyContext.Provider>

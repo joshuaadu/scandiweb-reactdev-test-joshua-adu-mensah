@@ -5,7 +5,7 @@ import ProductList from "../layout/ProductList";
 class ProductsListing extends Component {
 	render() {
 		return (
-			<main>
+			<>
 				<h2>women</h2>
 				<ProductList>
 					<>
@@ -35,7 +35,7 @@ class ProductsListing extends Component {
 						/>
 					</>
 				</ProductList>
-			</main>
+			</>
 		);
 	}
 }
