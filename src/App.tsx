@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import { Navigate, Route, Routes } from "react-router-dom";
-// import Header from "./components/Header";
+import { Route, Routes } from "react-router-dom";
 import Layout from "./layout/Layout";
 import ProductsListing from "./pages/ProductsListing";
 import CurrencyContext from "./store/currency-context";
