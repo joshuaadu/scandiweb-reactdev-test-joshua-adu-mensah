@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import Layout from "./layout/Layout";
+import ProductDescription from "./pages/ProductDescription";
 import ProductsList from "./pages/ProductsList";
 import CurrencyContext from "./store/currency-context";
 
@@ -31,6 +32,7 @@ class App extends Component {
 							<Route path="women" element={<ProductsList category="Women" />} />
 							<Route path="men" element={<ProductsList category="Men" />} />
 							<Route path="kids" element={<ProductsList category="Kids" />} />
+							<Route path="item" element={<ProductDescription />} />
 						</Route>
 					</Routes>
 				</div>
