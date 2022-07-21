@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import Layout from "./layout/Layout";
-import ProductsListing from "./pages/ProductsListing";
+import ProductsList from "./pages/ProductsList";
 import CurrencyContext from "./store/currency-context";
 
 class App extends Component {
@@ -27,10 +27,10 @@ class App extends Component {
 				<div className="App">
 					<Routes>
 						<Route path="/" element={<Layout />}>
-							<Route index element={<ProductsListing />} />
-							<Route path="women" element={<ProductsListing />} />
-							<Route path="men" element={<h2>men</h2>} />
-							<Route path="kids" element={<h2>kids</h2>} />
+							<Route index element={<Navigate to="women" />} />
+							<Route path="women" element={<ProductsList category="Women" />} />
+							<Route path="men" element={<ProductsList category="Men" />} />
+							<Route path="kids" element={<ProductsList category="Kids" />} />
 						</Route>
 					</Routes>
 				</div>
