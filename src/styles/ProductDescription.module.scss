@@ -1,0 +1,13 @@
+.main {
+	display: flex;
+	padding: 80px;
+
+	flex-wrap: wrap;
+	width: 100%;
+	justify-content: center;
+	gap: 4rem;
+
+	aside {
+		flex: 0 1 292px;
+	}
+}
