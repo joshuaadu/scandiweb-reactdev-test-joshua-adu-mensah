@@ -7,9 +7,7 @@ class Layout extends Component {
 		return (
 			<>
 				<Header />
-				<main>
-					<Outlet />
-				</main>
+				<Outlet />
 			</>
 		);
 	}

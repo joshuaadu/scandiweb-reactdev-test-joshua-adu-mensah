@@ -5,7 +5,7 @@ import ProductListLayout from "../layout/ProductListLayout";
 class ProductsList extends Component {
 	render() {
 		return (
-			<>
+			<main>
 				<h2>{this.props.category}</h2>
 				<ProductListLayout>
 					<>
@@ -35,7 +35,7 @@ class ProductsList extends Component {
 						/>
 					</>
 				</ProductListLayout>
-			</>
+			</main>
 		);
 	}
 }

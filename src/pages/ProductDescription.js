@@ -4,7 +4,7 @@ import Sizes from "../components/UI/Sizes";
 class ProductDescription extends Component {
 	render() {
 		return (
-			<>
+			<main className="p">
 				<section>
 					<div></div>
 					<div></div>
@@ -14,7 +14,7 @@ class ProductDescription extends Component {
 					<p>Running Short</p>
 					<Sizes sizes={["S", "M"]} />
 				</aside>
-			</>
+			</main>
 		);
 	}
 }
