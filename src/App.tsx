@@ -3,7 +3,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import Layout from "./layout/Layout";
 import ProductDescription from "./pages/ProductDescription";
 import ProductsList from "./pages/ProductsList";
-import CurrencyContext from "./store/currency-context";
+import { CurrencyProvider } from "./store/currency-context";
 
 class App extends Component {
 	state = {
@@ -18,7 +18,7 @@ class App extends Component {
 		const { currency, currencySymbol } = this.state;
 		const { switchCurrency } = this;
 		return (
-			<CurrencyContext.Provider
+			<CurrencyProvider
 				value={{
 					currency,
 					currencySymbol,
@@ -36,7 +36,7 @@ class App extends Component {
 						</Route>
 					</Routes>
 				</div>
-			</CurrencyContext.Provider>
+			</CurrencyProvider>
 		);
 	}
 }
