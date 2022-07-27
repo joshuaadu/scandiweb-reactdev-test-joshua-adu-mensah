@@ -16,9 +16,11 @@ const storeReducer = (state = initialState, action) => {
 		return {
 			...state,
 			currency: action.payload,
-			currencySymbol: state.changeCurrency(action.payload),
+			currencySymbol: state.changeCurrency(action.payload, state.currencyList),
 		};
 	}
+
+	return state;
 };
 
 const store = createStore(storeReducer);
