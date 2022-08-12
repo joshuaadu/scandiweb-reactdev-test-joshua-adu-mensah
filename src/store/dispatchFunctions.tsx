@@ -1,8 +1,8 @@
 // Switch Currency
 
-const mapDispatchToCurrencyProps = (dispatch) => {
+const mapDispatchToCurrencyProps = (dispatch: any) => {
 	return {
-		select: (currency) =>
+		select: (currency: string) =>
 			dispatch({ type: "change-currency", payload: currency }),
 	};
 };

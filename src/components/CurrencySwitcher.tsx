@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { connect } from "react-redux";
+import { connect, ConnectedProps } from "react-redux";
 
 import { ReactComponent as SelectIcon } from "../assets/arrow-up.svg";
 import styles from "../styles/CurrencySwitcher.module.scss";
@@ -7,7 +7,15 @@ import CurrencyList from "./CurrencyList";
 import { mapDispatchToCurrencyProps } from "../store/dispatchFunctions";
 import { mapCurrencyStateToProps } from "../store/statePropsFunctions";
 
-class CurrencySwitcher extends Component {
+type State = {
+	showList: boolean;
+};
+
+const connector = connect(mapCurrencyStateToProps, mapDispatchToCurrencyProps);
+
+type Props = ConnectedProps<typeof connector>;
+
+class CurrencySwitcher extends Component<Props, State> {
 	state = {
 		showList: false,
 	};
@@ -18,7 +26,8 @@ class CurrencySwitcher extends Component {
 		});
 	}
 
-	selectHandler(currency) {
+	selectHandler(currency: string) {
+		// console.log()
 		this.props.select(currency);
 	}
 
@@ -28,7 +37,7 @@ class CurrencySwitcher extends Component {
 			<div className={styles["currency-option"]}>
 				<span>{this.props.currencySymbol}</span>
 				<span className={styles.icon} onClick={this.showListHandler.bind(this)}>
-					<SelectIcon size="large" />
+					<SelectIcon />
 				</span>
 				{this.state.showList && (
 					<CurrencyList
@@ -42,7 +51,4 @@ class CurrencySwitcher extends Component {
 	}
 }
 
-export default connect(
-	mapCurrencyStateToProps,
-	mapDispatchToCurrencyProps
-)(CurrencySwitcher);
+export default connector(CurrencySwitcher);

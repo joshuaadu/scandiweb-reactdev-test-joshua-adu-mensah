@@ -1,6 +1,9 @@
-import { createStore } from "redux";
+import { createStore, AnyAction } from "redux";
+import { CurrencyMap, Store } from "./types";
 
-const initialState = {
+
+
+const initialState: Store = {
 	currency: "USD",
 	currencySymbol: "$",
 	currencyList: new Map([
@@ -8,10 +11,11 @@ const initialState = {
 		["EUR", "€"],
 		["JPY", "¥"],
 	]),
-	changeCurrency: (currency, currencyList) => currencyList.get(currency),
+	changeCurrency: (currency: string, currencyList: CurrencyMap) =>
+		currencyList.get(currency),
 };
 
-const storeReducer = (state = initialState, action) => {
+const storeReducer = (state = initialState, action: AnyAction): Store => {
 	if (action.type === "change-currency") {
 		return {
 			...state,
