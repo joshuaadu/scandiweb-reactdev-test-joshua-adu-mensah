@@ -1,8 +1,15 @@
 import { Component } from "react";
+import { connect, ConnectedProps } from "react-redux";
 import ProductCard from "../components/ProductCard";
 import ProductListLayout from "../layout/ProductListLayout";
+import { mapCurrencyToProp } from "../store/statePropsFunctions";
 
-class ProductsList extends Component {
+const connector = connect(mapCurrencyToProp);
+
+type PropsFromStore = ConnectedProps<typeof connector>;
+type Props = PropsFromStore & { category?: string; currency?: string };
+
+class ProductsList extends Component<Props> {
 	render() {
 		return (
 			<main>
@@ -13,7 +20,7 @@ class ProductsList extends Component {
 							src="https://source.unsplash.com/random/?dress"
 							title="dress"
 							price="200"
-							currency="$"
+							currency={this.props.currency}
 						/>
 						<ProductCard
 							src="https://source.unsplash.com/random/?dress"
@@ -40,4 +47,4 @@ class ProductsList extends Component {
 	}
 }
 
-export default ProductsList;
+export default connector(ProductsList);
