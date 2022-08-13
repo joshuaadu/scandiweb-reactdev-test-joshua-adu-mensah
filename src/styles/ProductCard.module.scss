@@ -13,28 +13,52 @@
 	width: 25rem;
 	position: relative;
 
-	img {
-		object-fit: fill;
-		object-position: top;
+	.header {
+		height: 338px;
 		width: 100%;
-	}
 
-	p {
-		margin: 0;
-		width: 100%;
-		a {
-			text-decoration: none;
-			color: inherit;
+		img {
+			object-fit: fill;
+			object-position: top;
+			width: 100%;
+			height: 100%;
 		}
 	}
 
-	.cart-icon {
-		position: absolute;
-		left: 67.49%;
-		right: 10.61%;
-		top: 70.91%;
-		bottom: 4.15%;
-		visibility: hidden;
+	.content {
+		width: 100%;
+		p {
+			margin: 0;
+			width: 100%;
+			a {
+				text-decoration: none;
+				color: inherit;
+			}
+		}
+
+		p + p {
+			margin-top: 8px;
+		}
+
+		.cart-icon {
+			position: absolute;
+			left: 67.49%;
+			right: 10.61%;
+			top: 70.91%;
+			bottom: 4.15%;
+			visibility: hidden;
+		}
+		.title {
+			font-weight: fontStyles.$product-title-font-weight;
+			font-size: fontStyles.$primary-font-size;
+			line-height: fontStyles.$primary-line-height;
+			margin-top: 2rem;
+		}
+
+		.price {
+			font-weight: fontStyles.$product-price-font-weight;
+			line-height: fontStyles.$primary-line-height;
+		}
 	}
 
 	&:where(:active, :hover) {
@@ -45,15 +69,29 @@
 		}
 	}
 
-	.title {
-		font-weight: fontStyles.$product-title-font-weight;
-		font-size: fontStyles.$primary-font-size;
-		line-height: fontStyles.$primary-line-height;
-		margin-top: 2rem;
+	.animated-bg {
+		background-image: linear-gradient(
+			to right,
+			#f6f7f8 0%,
+			#edeef1 10%,
+			#f6f7f8 20%,
+			#f6f7f8 100%
+		);
+		background-size: 200% 100%;
+		animation: bgPos 1s linear infinite;
+	}
+	.animated-bg-text {
+		border-radius: 10px;
+		display: inline-block;
+		color: transparent;
 	}
 
-	.price {
-		font-weight: fontStyles.$product-price-font-weight;
-		line-height: fontStyles.$primary-line-height;
+	@keyframes bgPos {
+		0% {
+			background-position: 50% 0;
+		}
+		100% {
+			background-position: -150% 0;
+		}
 	}
 }
