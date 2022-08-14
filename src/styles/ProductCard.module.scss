@@ -30,6 +30,7 @@
 		p {
 			margin: 0;
 			width: 100%;
+			padding: 0;
 			a {
 				text-decoration: none;
 				color: inherit;
@@ -37,7 +38,7 @@
 		}
 
 		p + p {
-			margin-top: 8px;
+			margin-top: 4px;
 		}
 
 		.cart-icon {
@@ -52,7 +53,7 @@
 			font-weight: fontStyles.$product-title-font-weight;
 			font-size: fontStyles.$primary-font-size;
 			line-height: fontStyles.$primary-line-height;
-			margin-top: 2rem;
+			margin-top: 0.8rem;
 		}
 
 		.price {
@@ -63,10 +64,12 @@
 
 	&:where(:active, :hover) {
 		box-shadow: 0px 4px 35px 0px rgba(168, 172, 176, 0.19);
+    .content{
+      .cart-icon {
+       visibility: visible;
+     }
 
-		.cart-icon {
-			visibility: visible;
-		}
+    }
 	}
 
 	.animated-bg {
